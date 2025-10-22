@@ -127,21 +127,30 @@
             updateMemoryScore();
 
             const container = document.getElementById('ods-container');
+            container.innerHTML = ''; // Limpa qualquer conteúdo anterior
 
         odsData.forEach(ods => {
+            const jogoDiv = document.createElement('div'); // Cria um contêiner para o quadrado
+            jogoDiv.classList.add('memoriajogo'); // Adiciona a classe 'jogo'
+
             const img = document.createElement('img');
             img.src = ods.image;
             img.alt = ods.title;
             img.classList.add('imagem-ods'); // Adiciona a classe para estilização
-            container.appendChild(img);
+            
+            jogoDiv.appendChild(img); // Adiciona a imagem ao quadrado
+            container.appendChild(jogoDiv); // Adiciona o quadrado ao contêiner
         });
+
+        // Iniciar o jogo da memória ao carregar a página
+        window.onload = startMemoryGame;
             
             const grid = document.getElementById('memory-grid');
             grid.innerHTML = '';
             
             memoryCards.forEach((card, index) => {
                 const cardElement = document.createElement('div');
-                cardElement.className = 'card-memory h-20 w-20 rounded-xl flex items-center text-center justify-center mb-4 shadow-lg border-radius-15px cursor-pointer text-2xl font-bold hover:shadow-lg hover:scale-105 border-1 border-green-800';
+                cardElement.className = 'card-memory h-16 w-16 rounded-xl px-2 py-2 text-center justify-center mb-4 shadow-lg border-radius-15px cursor-pointer text-2xl border-green-800';
                 cardElement.dataset.index = index;
                 cardElement.dataset.id = card.id;
                 cardElement.innerHTML = '?';
