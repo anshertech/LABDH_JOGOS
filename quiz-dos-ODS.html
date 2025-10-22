@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="icon" href="img/mito.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen text-white">
+    <script src="script.js"></script>
+    <!-- Matrix Background Effect -->
+    <div class="matrix-bg">
+        <canvas id="matrix-canvas"></canvas>
+    </div>
+
+    <!-- Header -->
+    <header class="cyber-card shadow-2xl relative">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">                    
+                    <div>
+                        <h3 class="game-title text-2xl md:text-3xl font-bold text-green-400">❓ QUIZ DOS ODS</h3>                    
+                    </div>
+                </div>
+                <a href="index.html">
+                <button class="btn-cyber text-white px-6 py-3 rounded-lg font-medium">
+                    🏠 INÍCIO
+                </button>
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="game-menu" class="game-section active py-3">
+        <div class="container mx-auto px-2">
+            <div class="text-center mb-4">                                
+            </div>
+
+            
+    <div class="grid grid-cols-1 container-grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"></div>
+    <div class="container mx-auto px-4 max-w-4xl">
+            <div class="cyber-card rounded-2xl p-8 shadow-2xl">
+                <div class="text-center mb-8">                    
+                    <p class="text-gray-300">Teste seus conhecimentos sobre sustentabilidade!</p>
+                </div>
+                
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center space-x-4 bg-green-500/20 px-6 py-3 rounded-lg border border-green-500/30">
+                        <span class="text-green-300 font-medium">Pergunta: <span id="quiz-current">1</span>/10</span>
+                        <span class="text-green-300 font-medium">Pontos: <span id="quiz-score">0</span></span>
+                    </div>
+                </div>
+                
+                <div id="quiz-container" class="mb-8">
+                    <div id="quiz-question" class="text-xl font-bold mb-6 text-center text-white"></div>
+                    <div id="quiz-options" class="space-y-3">
+                        <!-- Opções aparecerão aqui -->
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button onclick="startQuizGame()" class="btn-cyber text-white px-8 py-3 rounded-lg font-medium">
+                        🎯 Iniciar Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>        
+    
+     <!-- Footer -->
+    <footer class="cyber-card py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <h3 class="game-title text-xl font-bold mb-2 text-green-400">Universidade Federal Rural do Rio de Janeiro (UFRRJ)</h3>
+                <p class="text-gray-300">Laboratório de Ação Humanitária e Paradiplomacia</p>
+            </div>
+            <div class="text-sm text-gray-400">
+                <p>&copy; 2025 UFRRJ - Laboratório de Direitos Humanos. Projeto de extensão.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

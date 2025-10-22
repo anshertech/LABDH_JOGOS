@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos</title>
+    <link rel="icon" href="img/mito.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css"> 
+   </head>
+<body class="min-h-screen text-white">
+    <script src="script.js"></script>
+    <!-- Matrix Background Effect -->
+    <div class="matrix-bg">
+        <canvas id="matrix-canvas"></canvas>
+    </div>
+
+    <!-- Header -->
+    <header class="cyber-card shadow-2xl relative">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">                    
+                    <div>
+                        <h1 class="game-title text-2xl md:text-3xl font-bold text-green-400">JOGOS</h1>
+                        <p class="text-green-300">Aprenda brincando!</p>
+                    </div>
+                </div>
+                <button onclick="showGameMenu()" class="btn-cyber text-white px-6 py-3 rounded-lg font-medium">
+                    🏠 INÍCIO
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Principal -->
+    <section id="game-menu" class="game-section active py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h4 class="game-title text-4xl md:text-5xl font-bold mb-4 text-green-400">
+                    Amplie seu conhecimento!
+                </h4>                
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+                <!-- Jogos  -->
+                 
+                <a href="jogo-da-memoria.html" class="jogo1 game-card cyber-card rounded-2xl p-6 cursor-pointer hologram-effect" onclick="showGame('memory-game')">                     
+                    <div class="text-center relative z-10">
+                        <div class="img-jog text-5xl mb-4"><img src="img/jogm.png"></div>
+                        <h3 class="text-2xl font-bold mb-3 text-green-400">Jogo da Memória</h3>
+                        <p class="text-gray-300 mb-4">Encontre os pares dos ODS e teste sua memória!</p>                       
+                        <div class="bg-green-500/30 text-green-300 px-3 py-1 rounded-full text-sm font-medium border border-green-500/30">
+                            Concentração
+                        </div>
+                    </div>                
+                </a>
+
+
+
+                <a href="quiz-dos-ODS.html" class="game-card cyber-card rounded-2xl p-6 cursor-pointer hologram-effect" onclick="showGame('quiz-game')">
+                    <div class="text-center relative z-10">
+                        <div class="img-jog text-5xl mb-4"><img src="img/quiz.webp"></div>
+                        <h3 class="text-2xl font-bold mb-3 text-green-400">Quiz dos ODS</h3>
+                        <p class="text-gray-300 mb-4">Teste seus conhecimentos sobre sustentabilidade!</p>
+                        <div class="bg-blue-500/30 text-blue-300 px-3 py-1 rounded-full text-sm font-medium border border-blue-500/30">
+                            Conhecimento
+                        </div>
+                    </div>
+                </a>
+
+
+                <a href="calculadora-de-impacto.html" class="game-card cyber-card rounded-2xl p-6 cursor-pointer hologram-effect" onclick="showGame('eco-calculator')">
+                    <div class="text-center relative z-10">
+                        <div class="img-jog text-5xl mb-4"><img src="img/calim.png"></div>
+                        <h3 class="text-2xl font-bold mb-3 text-green-400">Calculadora de Impacto</h3>
+                        <p class="text-gray-300 mb-4">Calcule sua pegada de carbono!</p>
+                        <div class="bg-emerald-500/30 text-emerald-300 px-3 py-1 rounded-full text-sm font-medium border border-emerald-500/30">
+                            Sustentabilidade
+                        </div>
+                    </div>
+                </a>
+
+                
+                <a href="caca-palavras.html" class="game-card cyber-card rounded-2xl p-6 cursor-pointer hologram-effect" onclick="showGame('word-search')">
+                    <div class="text-center relative z-10">
+                        <div class="img-jog text-5xl mb-4"><img src="img/capa.png"></div>
+                        <h3 class="text-2xl font-bold mb-3 text-green-400">Caça-Palavras</h3>
+                        <p class="text-gray-300 mb-4">Encontre palavras relacionadas aos ODS!</p>
+                        <div class="bg-orange-500/30 text-orange-300 px-3 py-1 rounded-full text-sm font-medium border border-orange-500/30">
+                            Observação
+                        </div>
+                    </div>
+                </a>
+
+
+                <a href="advinhe-o-ODS.html" class="game-card cyber-card rounded-2xl p-6 cursor-pointer hologram-effect" onclick="showGame('guess-ods')">
+                    <div class="text-center relative z-10">
+                        <div class="img-jog text-5xl mb-4"><img src="img/adv.png"></div>
+                        <h3 class="text-2xl font-bold mb-3 text-green-400">Adivinhe o ODS</h3>
+                        <p class="text-gray-300 mb-4">Descubra qual ODS pelas dicas!</p>
+                        <div class="bg-teal-500/30 text-teal-300 px-3 py-1 rounded-full text-sm font-medium border border-teal-500/30">
+                            Dedução
+                        </div>
+                    </div>
+                </a>
+
+                <a href="mito-ou-verdade.html" class="game-card cyber-card rounded-2xl p-6 cursor-pointer hologram-effect" onclick="showGame('myth-truth')">
+                    <div class="text-center relative z-10">
+                        <div class="img-jog text-5xl mb-4"><img src="img/mito.png"></div>
+                        <h3 class="text-2xl font-bold mb-3 text-green-400">Mito ou Verdade</h3>
+                        <p class="text-gray-300 mb-4">Descubra fatos e mitos sobre sustentabilidade!</p>
+                        <div class="bg-pink-500/30 text-pink-300 px-3 py-1 rounded-full text-sm font-medium border border-pink-500/30">
+                            Análise
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+       
+    <!-- Footer -->
+    <footer class="cyber-card py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <h3 class="game-title text-xl font-bold mb-2 text-green-400">Universidade Federal Rural do Rio de Janeiro (UFRRJ)</h3>
+                <p class="text-gray-300">Laboratório de Ação Humanitária e Paradiplomacia</p>
+            </div>
+            <div class="text-sm text-gray-400">
+                <p>&copy; 2025 UFRRJ - Laboratório de Direitos Humanos. Projeto de extensão.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
